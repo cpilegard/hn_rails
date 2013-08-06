@@ -1,7 +1,13 @@
 HackerNews::Application.routes.draw do
   root :to => 'posts#index'
+
   resources :users
   resources :posts
+  resources :sessions
+
+  match '/signup',  to: 'users#new',        via: 'get'
+  match '/signin',  to: 'sessions#new',     via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

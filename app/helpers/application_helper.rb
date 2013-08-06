@@ -1,8 +1,11 @@
 module ApplicationHelper
 
   def current_user
-    @current_user ||= session[:user] &&
-      User.find_by_id(session[:user])
+    if session[:user]
+      @current_user = User.find_by_id(session[:user])
+    else
+      nil
+    end
   end
-  
+
 end
