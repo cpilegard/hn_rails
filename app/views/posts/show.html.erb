@@ -5,9 +5,9 @@
   <% @post.comments.each do |comment| %>
     <p><%= comment.content %></p>
     <span class='votes'><%= comment.votes %></span>
-<!--     <%# if current_user %>
+    <% if @current_user %>
       <a class='vote' href='/comment/<%= comment.id %>/vote'>Vote</a>
-    <%# end %> -->
+    <% end %>
     <p><%= comment.user.username %></p>
   <% end %>
 </div>
