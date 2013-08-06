@@ -1,0 +1,13 @@
+<div class='container'>
+  <h1><%= @post.title %></h1>
+  <p><%= @post.content %></p>
+  <h3>Comments</h3>
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.content %></p>
+    <span class='votes'><%= comment.votes %></span>
+<!--     <%# if current_user %>
+      <a class='vote' href='/comment/<%= comment.id %>/vote'>Vote</a>
+    <%# end %> -->
+    <p><%= comment.user.username %></p>
+  <% end %>
+</div>
