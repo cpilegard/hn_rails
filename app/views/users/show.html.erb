@@ -1,0 +1,13 @@
+<div class='container'>
+  <h1><%= current_user.username %></h1>
+  <% current_user.posts.each do |post| %>
+    <h3><%= link_to post.title, post %></a></h3>
+  <% end %>
+  <% unless current_user.comments.empty? %>
+    <h3>Comments</h3> 
+    <% current_user.comments.each do |comment| %>
+      <p><%= comment.post.title %></p>
+      <p><%= comment.content %></p>
+    <% end %>
+  <%end%>
+</div>
