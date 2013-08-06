@@ -9,10 +9,10 @@
 <body>
   <% if current_user %>
     <%= link_to "Sign Out", signout_path, method: :delete %>
-    <a href='/users/<%= current_user.id%>'>Profile</a>
+    <%= link_to "Profile", current_user %>
   <%else%> 
-    <a href='/signup'>Sign Up</a>
-    <a href='/signin'>Log In</a>
+    <%= link_to "Sign Up", signup_path %>
+    <%= link_to "Sign In", signin_path %>
   <%end%>
 
 <%= yield %>
