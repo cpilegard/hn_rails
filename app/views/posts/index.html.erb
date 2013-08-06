@@ -3,9 +3,9 @@
     <h3>
       <%= link_to post.title, post %>
       <span class='votes'><%= post.votes %></span>
-<!--       <%# if current_user %>
+      <% if current_user %>
         <a class='vote' href='/post/<%= post.id %>/vote'>Vote</a>
-      <%# end %> -->
+      <% end %>
     </h3>
   <% end %>
 </div>
